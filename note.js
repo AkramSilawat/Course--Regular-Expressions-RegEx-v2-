@@ -9,9 +9,53 @@
 // \d\w\d\w    -> 646.555t.1234
 // \s\s        -> two whitespace
 
+// \w{5} 
+// \w{5}\s
+// \s\w{5}\s
+// \w+
+// \w\d+
 
-// the colors of the rainbow have many colours and the 
+
+
+
+
+// The colors of the rainbow have many colours and the 
 // rainbow does not have a single colours.
+
+// colou?r
+// colou?rs?
+
+
+
+// This is something
+// is about
+// a blah
+// words
+// sequence of words
+// Hello and
+// single
+// Goodbye and
+// Go go go rainbow!
+
+
+// ^\w+        -> Start select
+// \w+$        -> End select
+// ^\w+$       -> line of one words select only
+
+// \b\w{4}       -> all words select 4 Characters 
+// \b\w{4}\b     -> Only 4 Word Character select         // block Boundri 
+// \b\w{4,6}\b   -> Only 4 And 6 Word Character select         // block Boundri 
+
+
+
+
+// These are some phone numbers 917-555-1234. 
+
+// \d{3}-\d{3}-\d{4}   ->  Select 3- Digt Select 3- Digt Select 4 Digt
+
+
+
+
 
 
 

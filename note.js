@@ -1,7 +1,7 @@
 
-// These are some phone numbers 917-555-1234.  Also, you 
-// can call me at 646.555.1234 and of course I'm always
-// reachable at (212)867-5309.
+// These are some phone numbers $1-***-****.  you Also 
+// can call me at $1-***-**** and of course I'm always
+// reachable at $1-***-****.
 
 // RegEx Code
 
@@ -50,12 +50,11 @@
 
 
 // These are some phone numbers 917-555-1234. 
+// can call me at 646.555.1234 and of course I'm always
+// reachable at (212)867-5309.
+
 
 // \d{3}-\d{3}-\d{4}   ->  Select 3- Digt Select 3- Digt Select 4 Digt
-
-
-
-
 
 
 
@@ -65,17 +64,60 @@
 
 // =======>> Meta-chars <<======= //
 
-//   single char             Quantifiers         position
+//   single char             Quantifiers          position
 //  /d -> 0-9               * -> 0 or more      ^  -> beginning
 //  /w -> a-z A-z 0-9 _     + -> 1 or more      $  -> end
 //  /s -> whitespace        ? -> 0 or 1         /b -> word boundry
-//  .  -> any character     {min, max}
+//  .  -> any character     {max min}
 //                          {n}
 
 
-// char-class (alternation)
 
-// [^0-9]{3}        //  match  // all non number
-// l[yi]nk          //  match  // link or lynk
-// \d{3}[-.]\d{3}   //  match  // 222.111 or 888-999
-// \b[A-Z][a-z]*\b  //  match  // Book or The or A or Liitle or Son
+// -------------------------------------------------------
+
+// =======>> character-classes (alternation) <<======= //
+
+// The lynk is quite a link don't you think? l nk l(nk
+
+// l[yi]nk
+// l[yi (]nk
+
+// \d{3}[-.]\d{3}           -> 646.555.1234   
+// \d{3}[-.]\d{3}[-.]\d{4}    -> 917-555-1234   
+// \(?\d{3}[-.)]\d{3}[-.]\d{4}   -> (212)867-5309   
+
+
+
+// [a-c0-5]
+
+// [0-5]{3}
+
+// [^0-5]{3}
+
+// [^abc]{3}
+
+// \b[A-Za-z]{4}\b
+
+// \b[A-Z][a-z]+\b
+
+
+
+
+// daniel@shiffman.net or 
+// daniel.shiffman@gmail.com and 
+// daniel.shiffman@ArrayBuffer.edu
+
+
+// [\w.]+@\w+\.(net|com|edu)
+
+
+// =======>> Capturing Groups <<======= //
+
+// These are some phone numbers 917-555-1234. 
+// can call me at 646.555.1234 and of course I'm always
+// These are some phone numbers 917-555-1234. 
+// can call me at 646.555.1234 and of course I'm always
+
+
+// \(?(\d{3})[-.)]\d{3}[-.]\d{4}     -> 917-555-1234. Replace to no -> $1-***-****  -> 917-***-****.
+

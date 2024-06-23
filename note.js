@@ -94,7 +94,7 @@
 
 // [^0-5]{3}
 
-// [^abc]{3}
+// [^abc]{3}           // start abc ignor
 
 // \b[A-Za-z]{4}\b
 
@@ -120,4 +120,85 @@
 
 
 // \(?(\d{3})[-.)]\d{3}[-.]\d{4}     -> 917-555-1234. Replace to no -> $1-***-****  -> 917-***-****.
+
+
+// Shiffman Daniel
+// Schiffman Danielle
+// Sheeefmahn Danny
+
+
+// (\w+),\s+(\w+)
+// aks, akram
+
+// this is google [google](http://google.com) and this is
+// [itp](http://itp.nyu.edu) and also
+// [Coding Rainboe](http://codingrainbow.com)
+
+
+
+// \[.*\]              all select
+// \[.*?\]             sepret select
+// \[.*?\]\(http.*?\)      all select
+
+// \[(.*?)]\((http.*?\)    not slow
+// <a href="$2">$1</a>    replace
+
+
+
+
+
+
+// =======>> test() and match() <<======= //
+
+// var r = /\d{3}/;
+
+// console.log(r.test("123"));
+// console.log(r.test("123ABC"));
+
+
+// var r = /^\d{3}$/;
+
+// console.log(r.test("123"));     
+// console.log(r.test("123ABC"));   
+
+
+
+
+// var s = "unicorns and rainbows and cupcakes";
+
+// var r = /unicorn/;
+// console.log(r.test(s));      // true
+// console.log(s.match(r));
+
+
+
+// var s = "unicorns and rainbows and cupcakes";
+
+
+// var r = /\w+/;           //  fast match only
+// console.log(s.match(r));
+
+
+
+
+// var s = "unicorns and rainbows and cupcakes";
+
+// var r = /[a-z]+/g;
+// console.log(s.match(r));
+
+
+
+
+// var s = "unicorns and rainbows And Cupcakes  akram";
+
+// var r = /[a-z]+/g;
+// console.log(s.match(r));    // Capital A J B single charecter not select
+
+
+
+
+var s = "unicorns and rainbows And Cupcakes";
+
+var r = /\b[a-z]+\b/g;  
+console.log(s.match(r));    // Capital single one charecter  not select words
 

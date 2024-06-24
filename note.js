@@ -120,33 +120,46 @@
 
 
 // \(?(\d{3})[-.)]\d{3}[-.]\d{4}     -> 917-555-1234. Replace to no -> $1-***-****  -> 917-***-****.
+ 
 
-
-// Shiffman Daniel
-// Schiffman Danielle
-// Sheeefmahn Danny
+// Shiffman, Daniel
+// Schiffman, Danielle
+// Sheeefmahn, Danny
 
 
 // (\w+),\s+(\w+)
 // aks, akram
+
+// /this is google[google](http://google.com) and this is
+// [itp](http://itp.nyu.edu) and also
+// [Coding Rainboe](http://codingrainbow.com)
 
 // this is google [google](http://google.com) and this is
 // [itp](http://itp.nyu.edu) and also
 // [Coding Rainboe](http://codingrainbow.com)
 
 
-
 // \[.*\]              all select
 // \[.*?\]             sepret select
 // \[.*?\]\(http.*?\)      all select
 
-// \[(.*?)]\((http.*?\)    not slow
+// \[(.*?)]\((http.*?)\)    not slow
 // <a href="$2">$1</a>    replace
 
 
 
 
+// 5 --> Programming with Text
 
+
+// This is is some text text with 
+// double double words some where I I I am 
+// not not sure why why I am typing ok?
+// rainbow rainbow unicorn unicorn.
+
+
+// (\w+)\s\1      double word select
+// \b(\w+)\s\1\b      double word select
 
 // =======>> test() and match() <<======= //
 
@@ -197,8 +210,9 @@
 
 
 
-var s = "unicorns and rainbows And Cupcakes";
+// var s = "unicorns and rainbows And Cupcakes";
 
-var r = /\b[a-z]+\b/g;  
-console.log(s.match(r));    // Capital single one charecter  not select words
+// var r = /\b[a-z]+\b/g;  
+// console.log(s.match(r));    // Capital single one charecter  not select words
+
 

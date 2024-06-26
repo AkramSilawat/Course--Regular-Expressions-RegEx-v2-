@@ -75,6 +75,7 @@ function setup() {
 // var s = "unicorn and rainbows and cupcakes";
 
 // s.split(/\s/);= => ["unicorn", "and", "rainbow", "and", "cupcakes"]
+// s.split(/\s/);= => ["unicorn", "and", "rainbow", "and", "cupcakes"]
 
 // s.split(/,\s/);= => ["unicorn and rainbow and", "cupcakes"]
 

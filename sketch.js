@@ -1,3 +1,5 @@
+// -->> test() and match()
+
 var textfield;
 var output;
 var submit;
@@ -33,12 +35,11 @@ function newText() {
 
 
     var results;
-    while( results = r.exec(s)){
+    while (results = r.exec(s)) {
         createP(results[0])
-        console.log
     }
 
-   
+
 
 
     // for (var i = 0; i < mateches.length; i++){
@@ -48,3 +49,54 @@ function newText() {
 
 }
 
+
+// --->> exec()
+
+function newText() {
+    var s = textfield.value();
+
+    var r = /(\d{3})[-.]\d{4}/g
+
+
+    var result = r.exec(s);
+    while (result != null) {
+        // createP(result);      // -->  /(\d{3})[-.]\d{4}/g
+        createP(result[0]);      // -->  /(\d{3})[-.]\d{4}/g
+        result = r.exec(s);
+    }
+
+}
+
+
+// ----> split()
+
+// in terminal
+
+// var s = "unicorn and rainbows and cupcakes";
+
+// s.split(/\s/);= => ["unicorn", "and", "rainbow", "and", "cupcakes"]
+
+// s.split(/,\s/);= => ["unicorn and rainbow and", "cupcakes"]
+
+// s.split(/[,\s/]/);= => ["unicorn", "and", "rainbow", "and", "", "cupcakes"]
+
+// s.split(/[,\s/]+/);= => ["unicorn", "and", "rainbow", "and", "cupcakes"]  // -> extra empty arr lost
+
+
+
+
+function newText() {
+    var s = textfield.value();
+
+    // var r = /[,.!?\s]+/;
+    // var r = /[.,?!]+/;
+    // var r = /[A-Z]+/;
+    var r = /(\w+)/;
+    var words = s.split(r);
+
+    console.log(words);
+
+    for (var i = 0; i < words.length; i++) {
+        createP(words[i])
+    }
+}
